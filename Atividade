@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include<locale.h>
+
+int main() {
+int mat[10], matriculaDesajada, i;
+float media[10];
+
+setlocale(LC_ALL,"Portuguese_Brazil");
+
+for (i = 0; i < 10; i++) {
+    printf("\nDigite a matrícula do aluno: ");
+    scanf("%d", &mat[i]);
+
+    printf("Digite a nota do aluno: ");
+    scanf("%f", &media[i]);
+}
+
+
+printf("\nDigite a matrícula do aluno que deseja buscar: ");
+scanf("%d", &matriculaDesajada);
+
+
+for (i = 0; i < 10; i++) {
+    if (mat[i] == matriculaDesajada) {
+        printf("\nA nota do aluno de matrícula %d é %.2f.\n", matriculaDesajada, media[i]);
+        return 0;
+    }
+}
+
+printf("\nMatrícula não encontrada.\n");
+
+return 0;
+}
